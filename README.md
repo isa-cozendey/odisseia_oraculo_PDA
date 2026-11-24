@@ -2,6 +2,9 @@
 
 Jogo web didático para explorar **Autômatos com Pilha (PDA)**. O viajante percorre três câmaras, coleta cristais e chaves e precisa respeitar a ordem LIFO da mochila para abrir passagens e alcançar os objetivos.
 
+## Link do GitHub Pages para acessar o jogo:
+<https://isa-cozendey.github.io/odisseia_oraculo_PDA/>
+
 ## Como jogar
 
 - Use **WASD** ou as **setas** para movimentar o personagem pelo mapa.
