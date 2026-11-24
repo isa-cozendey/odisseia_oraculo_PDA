@@ -1,0 +1,110 @@
+    :root {
+      --sky-deep: #211832;
+      --sky-wine: #4a2545;
+      --sky-coral: #d86c70;
+      --sky-peach: #f5a673;
+      --moon-glow: #fff0e5;
+      --glass-bg: rgba(33, 24, 50, 0.58);
+      --glass-border: rgba(255, 240, 229, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      user-select: none;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: linear-gradient(180deg, #191228 0%, #2d1b3d 32%, #6d3354 65%, #d86c70 88%, #f5a673 100%);
+      color: #fff0e5;
+      min-height: 100vh;
+      overflow-x: hidden;
+      margin: 0;
+    }
+
+    .font-display {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.08em;
+    }
+
+    .font-mono-code {
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Painéis Glassmorphism estilo Alto's Odyssey */
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 18px 40px rgba(15, 10, 26, 0.45);
+    }
+
+    .glass-subpanel {
+      background: rgba(22, 15, 36, 0.52);
+      border: 1px solid rgba(255, 240, 229, 0.1);
+    }
+
+    /* Animação do Céu e Balões ao Fundo */
+    @keyframes floatBalloon {
+      0%, 100% { transform: translateY(0px) translateX(0px); }
+      50% { transform: translateY(-14px) translateX(6px); }
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.25; transform: scale(0.9); }
+      50% { opacity: 0.95; transform: scale(1.15); }
+    }
+
+    .balloon-float-1 { animation: floatBalloon 9s ease-in-out infinite; }
+    .balloon-float-2 { animation: floatBalloon 12s ease-in-out infinite 2s; }
+    .balloon-float-3 { animation: floatBalloon 10.5s ease-in-out infinite 4s; }
+
+    /* Animações da Pilha (LIFO Stack) */
+    @keyframes pushBlock {
+      0% { opacity: 0; transform: translateY(-28px) scale(0.88); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+
+    .stack-item-enter {
+      animation: pushBlock 0.35s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    }
+
+    /* Pulso no nó ativo do PDA */
+    @keyframes statePulse {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(245, 166, 115, 0.85)); }
+      50% { filter: drop-shadow(0 0 18px rgba(255, 240, 229, 1)); }
+    }
+
+    .node-active {
+      animation: statePulse 1.8s infinite ease-in-out;
+    }
+
+    /* Botões estilizados */
+    .btn-alto {
+      transition: all 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .btn-alto:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(216, 108, 112, 0.35);
+    }
+    .btn-alto:active:not(:disabled) {
+      transform: translateY(0px);
+    }
+
+    /* Scrollbar discreta */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(25, 18, 40, 0.4);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(245, 166, 115, 0.4);
+      border-radius: 999px;
+    }
+
+    input[type="text"] {
+      user-select: text;
+    }
